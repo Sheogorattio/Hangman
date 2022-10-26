@@ -3,7 +3,10 @@
 using namespace std;
 class word
 {
+	static int max_errors;
+	int foundLetters;
 	string currentWord;
+	string wrongLetters;
 	char* fields;
 	int errors;
 public:
@@ -13,6 +16,9 @@ public:
 	int isnertLetter(char c);//ввод буквы, возврат числа ошибок
 	void printFields();//вывод закрытых полей и полей с отгаданными буквами
 	string getWord();//для вывода слова, если игрок проиграл
-	char* getFields();//Вывод закрытыъ полей и отгаданных букв
+	void printUsedLetters();
+	int getErrors();
+	bool isLoser();
+	bool isAllFound();
 };
 

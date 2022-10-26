@@ -16,11 +16,8 @@ vocab::vocab(const char* p)
 void vocab::addWord(const char* w)
 {
 	ofstream outConsole(path, ios::app | ios::out);
-	cout << "enter new word:\n";
-	char* _word = new char[50];
-	cin >> _word;
-	outConsole << endl << _word;
-	delete[] _word;
+	outConsole << endl << w;
+	
 	outConsole.close();
 }
 
@@ -32,10 +29,10 @@ void vocab::clearVocab()
 
 string vocab::getRandomWord()
 {
+	srand(time(NULL));
 	ifstream inConsole(path, ios::out);
-	int num;
-	cout << "enter num:\t";
-	cin >> num;
+	int num = 1+ rand()%getWordCount();
+	
 	string _word;
 	for (int i = 0; i < num; i++) {
 		inConsole >> _word;
