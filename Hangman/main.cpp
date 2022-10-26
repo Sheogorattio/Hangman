@@ -7,12 +7,12 @@
 using namespace std;
 
 int main() {
-	int choise=0;
+	int choice=0;
 	vocab _vocab("vocab.txt");
 	try {
 		while (1) {
-			choise = printMenu();
-			switch (choise) {
+			choice = printMenu();
+			switch (choice) {
 				case 1:
 					startGame(_vocab);
 					break;

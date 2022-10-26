@@ -26,7 +26,7 @@ void Man::print(int errors)
 		cout << " /----\n"
 			<< "|    |	\n"
 			<< "|    o	\n"
-			<< "|	( )\n"
+			<< "|   ( )\n"
 			<< "|   \n"
 			<< "|__________\n\n";
 		break;

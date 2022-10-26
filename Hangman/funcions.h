@@ -31,7 +31,7 @@ void startGame(vocab& _vocab) {
 	}
 	system("cls");
 	man.print(_word.getErrors());
-	_word.isLoser() ? printf("\nYou lose\n") : printf("\nYou win\n");
+	_word.isLoser() ? printf("\nYou lost\n") : printf("\nYou won\n");
 	cout << _word.getWord();
 	system("pause");
 	system("cls");
