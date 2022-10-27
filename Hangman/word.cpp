@@ -7,7 +7,7 @@ word::word(const char* w)
 	foundLetters = 0;
 	errors = 0;
 	currentWord = w;
-	int charStrSize = currentWord.size() + 1;
+	int charStrSize = currentWord.length() + 1;
 	fields = new char[charStrSize];
 	for (int i = 0; i < charStrSize; i++) {
 		fields[i] = '-';
@@ -20,7 +20,7 @@ word::word(const string& w)
 	foundLetters = 0;
 	errors = 0;
 	currentWord = w;
-	int charStrSize = currentWord.size()+1;
+	int charStrSize = currentWord.length() + 1;
 	fields = new char[charStrSize];
 	for (int i = 0; i < charStrSize; i++) {
 		fields[i] = '-';
@@ -37,17 +37,15 @@ word::~word()
 int word::isnertLetter(char c)
 {
 	bool check = 1;
-	for (int i = 0; i <= currentWord.size(); i++) {//поиск есть ли буква в слове
+	for (int i = 0; i <= currentWord.length(); i++) {//поиск есть ли буква в слове
 		if (c == currentWord[i]) {
 			fields[i] = c;
 			foundLetters++;
 			check = 0;
 		}
 	}
-	if (check) {//добавление буквы в список ошибок, если она не добавлялась в него ранее
+	if (check && wrongLetters.find(c) == string::npos) {//добавление буквы в список ошибок, если она не добавлялась в него ранее
 		errors++;
-	}
-	if (wrongLetters.find(c) == string::npos) {
 		wrongLetters.insert(wrongLetters.end(), c);
 	}
 	return errors;
