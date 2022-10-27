@@ -7,10 +7,10 @@
 using namespace std;
 
 int printMenu() {
-	cout << "1.Start game\n2.Add word\n3.Exit\n";
+	cout << "1.Start game\n2.Add word\n3.Clear vocabulary\n4.Exit\n";
 	int choise;
 	cin >> choise;
-	if (choise > 3 || choise < 1) {
+	if (choise > 4 || choise < 1) {
 		throw "error\nincorrect choise\n";
 	}
 	return choise;
@@ -32,7 +32,7 @@ void startGame(vocab& _vocab) {
 	system("cls");
 	man.print(_word.getErrors());
 	_word.isLoser() ? printf("\nYou lost\n") : printf("\nYou won\n");
-	cout << _word.getWord();
+	cout << _word.getWord() << "\n\n";
 	system("pause");
 	system("cls");
 }

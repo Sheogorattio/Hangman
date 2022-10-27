@@ -23,6 +23,9 @@ int main() {
 					_vocab.addWord(buff);
 					break;
 				case 3:
+					_vocab.clearVocab();
+					break;
+				case 4:
 					exit(0);
 			}
 		}
