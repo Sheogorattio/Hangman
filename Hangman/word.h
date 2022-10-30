@@ -15,10 +15,10 @@ public:
 	~word();
 	int isnertLetter(char c);//ввод буквы, возврат числа ошибок
 	void printFields();//вывод закрытых полей и полей с отгаданными буквами
-	string getWord();//для вывода слова, если игрок проиграл
-	void printUsedLetters();
+	string getWord();//для вывода слова, если игрок завершил игру
+	void printUsedLetters();//символы, которые употреблялись
 	int getErrors();
-	bool isLoser();
-	bool isAllFound();
+	bool isLoser();// 1 если число ошибок достигло максимума
+	bool isAllFound();// 1 если больше нет закрытых полей
 };
 

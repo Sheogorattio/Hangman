@@ -11,7 +11,7 @@ int printMenu() {
 	int choise;
 	cin >> choise;
 	if (choise > 4 || choise < 1) {
-		throw "error\nincorrect choise\n";
+		throw "error\nincorrect choice\n";
 	}
 	return choise;
 }
@@ -35,4 +35,15 @@ void startGame(vocab& _vocab) {
 	cout << _word.getWord() << "\n\n";
 	system("pause");
 	system("cls");
+}
+
+void addWord(vocab& _vocab) {
+	char buff[50];
+	cout << "Enter word:\t";
+	cin >> buff;
+	_vocab.addWord(buff);
+}
+
+void clearVocab(vocab& _vocab) {
+	_vocab.clearVocab();
 }

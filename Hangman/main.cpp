@@ -11,19 +11,17 @@ int main() {
 	vocab _vocab("vocab.txt");
 	try {
 		while (1) {
+			system("cls");
 			choice = printMenu();
 			switch (choice) {
 				case 1:
 					startGame(_vocab);
 					break;
 				case 2:
-					char buff[50];
-					cout << "Enter word:\t";
-					cin >> buff;
-					_vocab.addWord(buff);
+					addWord(_vocab);
 					break;
 				case 3:
-					_vocab.clearVocab();
+					clearVocab(_vocab);
 					break;
 				case 4:
 					exit(0);

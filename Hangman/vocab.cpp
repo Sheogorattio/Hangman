@@ -4,13 +4,13 @@ vocab::vocab()
 {
 	cout << "enter path:\t";
 	cin >> path;
-	wordCounter = 0;
+	wordCounter = getWordCount();
 }
 
 vocab::vocab(const char* p)
 {
 	path = p;
-	wordCounter = 0;
+	wordCounter = getWordCount();
 }
 
 void vocab::addWord(const char* w)
@@ -19,6 +19,7 @@ void vocab::addWord(const char* w)
 	outConsole << endl << w;
 	
 	outConsole.close();
+	renewWordCount();
 }
 
 void vocab::clearVocab()
@@ -29,6 +30,10 @@ void vocab::clearVocab()
 
 string vocab::getRandomWord()
 {
+	//renewWordCount();
+	if (wordCounter < 1) {
+		throw "error\nadd more words\n";
+	}
 	srand(time(NULL));
 	ifstream inConsole(path, ios::out);
 	int num = 1+ rand()%getWordCount();
@@ -45,6 +50,7 @@ void vocab::renewWordCount()
 {
 	ifstream outFile(path, ios::out);
 	char c;
+	wordCounter = 0;
 	while (!outFile.eof()) {
 		c = outFile.get();
 		if (c == '\n') wordCounter++;

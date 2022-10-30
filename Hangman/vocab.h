@@ -10,7 +10,7 @@ class vocab
 	int wordCounter;
 public:
 	vocab();
-	vocab(const char* p);
+	vocab(const char* p);//передать путь к файлу
 	void addWord(const char* w);
 	void clearVocab();
 	string getRandomWord();
