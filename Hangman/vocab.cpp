@@ -30,7 +30,7 @@ void vocab::clearVocab()
 
 string vocab::getRandomWord()
 {
-	//renewWordCount();
+	renewWordCount();
 	if (wordCounter < 1) {
 		throw "error\nadd more words\n";
 	}
